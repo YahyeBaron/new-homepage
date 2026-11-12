@@ -1,36 +1,29 @@
-# FDE Academy Website
+# UpBit Academy Website (Next.js)
 
-A clean, modern, and production-ready static website for the **Forward Deployed Engineer (FDE) Academy** homepage.
+A clean, modern, and production-ready Next.js application for the **UpBit Academy** homepage.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── index.html              # Main landing page
-├── package.json            # Project configuration & npm scripts
-├── pnpm-lock.yaml          # Locked dependency versions
-├── server.js               # Zero-dependency Node.js HTTP preview server
-├── start.bat               # Windows one-click launcher
-├── README.md               # Documentation
+├── app/
+│   ├── layout.jsx              # Root layout with metadata & fonts
+│   ├── page.jsx                # Homepage component
+│   └── pageHtml.js             # Server-rendered HTML markup
 │
-├── assets/
-│   ├── css/                # Stylesheets
-│   │   ├── webflow.css     # Main site styles
-│   │   ├── lenis.css       # Smooth scrolling styles
-│   │   └── swiper-bundle.min.css # Carousel / slider styles
-│   │
-│   ├── js/                 # Client scripts
-│   │   ├── jquery.min.js   # jQuery library
-│   │   ├── webflow.js      # Webflow runtime interactions
-│   │   ├── gsap.min.js     # GSAP animation library
-│   │   ├── ScrollTrigger.min.js # Scroll animations
-│   │   ├── lenis.min.js    # Smooth scroll engine
-│   │   ├── lazyload.min.js # Lazy-loading media handler
-│   │   ├── swiper-bundle.min.js # Swiper sliders
-│   │   └── hls.js          # HLS video streaming support
-│   │
-│   └── images/             # Optimized images, SVGs, and graphics (169 files)
+├── public/
+│   ├── favicon.svg             # Favicon
+│   └── assets/
+│       ├── css/                # webflow.css, lenis.css
+│       ├── js/                 # Webflow, GSAP, Lenis, Swiper, etc.
+│       └── images/             # Optimized images, SVGs, and graphics
+│
+├── next.config.mjs             # Next.js configuration
+├── package.json                # Project configuration & npm scripts
+├── pnpm-lock.yaml              # Locked dependency versions
+├── start.bat                   # Windows one-click launcher
+└── README.md                   # Documentation
 ```
 
 ---
@@ -38,23 +31,18 @@ A clean, modern, and production-ready static website for the **Forward Deployed 
 ## 🚀 Running the Website
 
 ### Option 1: One-Click Launch (Windows)
-Double-click **`start.bat`** to start the local Vite server and automatically open the homepage in your browser.
+Double-click **`start.bat`** to start the local Next.js dev server and automatically open [http://localhost:3000](http://localhost:3000).
 
 ### Option 2: Using NPM / PNPM
 ```bash
-npm start
+pnpm dev
 # or
+npm run dev
+```
+Runs Next.js at [http://localhost:3000](http://localhost:3000).
+
+### Production Build
+```bash
+pnpm run build
 pnpm start
 ```
-Runs Vite and opens [http://localhost:5173](http://localhost:5173).
-
-### Option 3: Zero-Dependency Node Server
-```bash
-npm run serve:node
-# or
-node server.js
-```
-Runs at [http://localhost:3000](http://localhost:3000).
-
-### Option 4: Direct File Opening
-Double-click **`index.html`** in File Explorer to view the website directly in any browser.

@@ -1,13 +1,9 @@
 @echo off
 echo ==============================================
-echo  Starting FDE Academy Website...
+echo  Starting UpBit Academy Next.js Website...
 echo ==============================================
 echo.
 
-if exist node_modules\.bin\vite.cmd (
-    call npx vite --open
-) else (
-    start http://localhost:3000
-    node server.js
-)
+start http://localhost:3000
+call pnpm run dev
 pause
